@@ -1,0 +1,24 @@
+python -u run.py \
+  --data multi_modal \
+  --root_path ./dataset/ \
+  --task_name multi_modal \
+  --is_training 1 \
+  --model_id multi_modal \
+  --model ICADLLM \
+  --data_type "TimeSeries,TabularData,Log" \
+  --train_data_size 200000 \
+  --gpt_layer 24 \
+  --train_epochs 5 \
+  --d_model 896 \
+  --learning_rate 1e-5 \
+  --batch_size "64,256,32" \
+  --normal_data_num 5 \
+  --sample_types pos-hard-neg pos-simple-neg \
+  --sample_types_rate 0.2 0.8 \
+  --seq_len 100 \
+  --cache_time \
+  --num_workers 0 \
+  --arc_margin 0.5 \
+  --muti_gpu True \
+  --devices 0,1,2,3,4,5,6,7
+
